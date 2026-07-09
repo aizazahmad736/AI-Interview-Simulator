@@ -93,3 +93,11 @@ Contributions, issues, and feature requests are welcome. Feel free to open a PR 
 ## License
 
 Add your preferred license here (e.g., MIT).
+
+## Future Improvements
+
+- Add more AI-generated interview questions
+- Add user authentication
+- Add interview performance analytics
+- Add support for multiple programming languages
+- Improve speech recognition accuracy
