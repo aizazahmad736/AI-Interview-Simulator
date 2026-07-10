@@ -1,3 +1,10 @@
+
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red?logo=streamlit)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+
 # 🤖 AI Interview Simulator
 
 A simple web app that generates mock interview questions tailored to a chosen job role and difficulty level, powered by Google's Gemini API and built with Streamlit.
