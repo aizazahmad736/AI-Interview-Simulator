@@ -7,7 +7,7 @@
 
 # 🤖 AI Interview Simulator
 
-A simple web app that generates mock interview questions tailored to a chosen job role and difficulty level, powered by Google's Gemini API and built with Streamlit.with user friendly interface
+A simple web app that generates mock interview questions tailored to a chosen job role and difficulty level, powered by Google's Gemini API and built with Streamlit.with user friendly interface and well designed as well
 
 ## Features
 
