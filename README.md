@@ -103,8 +103,8 @@ Add your preferred license here (e.g., MIT).
 
 ## Future Improvements
 
-- Add more AI-generated interview questions
-- Add user authentication
+- Add more AI-generated interview questions.
+- Add user authentication.
 - Add interview performance analytics
 - Add support for multiple programming languages
 - Improve speech recognition accuracy
