@@ -108,3 +108,29 @@ Add your preferred license here (e.g., MIT).
 - Add interview performance analytics
 - Add support for multiple programming languages
 - Improve speech recognition accuracy
+
+## 💡 Interview Preparation Tips
+
+### Before the Interview
+- Research the company and understand the job role requirements.
+- Review important concepts related to the position you are applying for.
+- Prepare examples of your previous projects and experiences.
+- Practice explaining your projects clearly and confidently.
+
+### During the Interview
+- Read each question carefully before answering.
+- Explain your thought process while solving technical problems.
+- Be honest if you don't know an answer and explain how you would approach learning it.
+- Communicate clearly and maintain confidence.
+
+### After the Interview
+- Review your performance and identify areas for improvement.
+- Work on weak topics and practice more questions.
+- Use feedback from the AI Interview Simulator to improve future interviews.
+
+### How AI Interview Simulator Helps
+- Generates role-specific interview questions.
+- Evaluates your answers using AI.
+- Provides feedback on strengths and weaknesses.
+- Helps you practice technical and behavioral interviews.
+- Tracks your improvement over time.
