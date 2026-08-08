@@ -62,6 +62,8 @@ A simple web app that generates mock interview questions tailored to a chosen jo
 streamlit run app.py
 ```
 
+<img width="830" height="436" alt="Screenshot 2026-07-10 152308" src="https://github.com/user-attachments/assets/242f3074-1b29-4a60-8bcb-b8ec1f6bc00a" />
+
 Then open the local URL Streamlit prints (usually `http://localhost:8501`) in your browser.
 
 ## Usage
