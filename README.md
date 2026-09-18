@@ -1,140 +1,114 @@
-
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-Latest-red?logo=streamlit)
-![Google Gemini](https://img.shields.io/badge/Google-Gemini-blue?logo=google)
-![License](https://img.shields.io/badge/License-MIT-green)
-
-
 # 🤖 AI Interview Simulator
 
-A simple web app that generates mock interview questions tailored to a chosen job role and difficulty level, powered by Google's Gemini API and built with Streamlit.with user friendly interface and well designed as well
+[![Python](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue?logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35%2B-red?logo=streamlit)](https://streamlit.io/)
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini%20Flash-4285F4?logo=google)](https://ai.google.dev/)
+[![CI Test Suite](https://github.com/aizazahmad736/AI-Interview-Simulator/actions/workflows/ci.yml/badge.svg)](https://github.com/aizazahmad736/AI-Interview-Simulator/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Features
+An intelligent, full-featured **AI Interview Simulator** built with **Streamlit** and **Google Gemini**. Practice real-world technical and behavioral interviews, receive instant AI scoring and critique, personalize questions from your resume, and download comprehensive PDF performance scorecards.
 
-- 🎯 **Role-based questions** — choose from Python Developer, Machine Learning Engineer, Data Analyst, Frontend Developer, or HR Interview
-- 📊 **Difficulty levels** — Beginner, Intermediate, or Advanced
-- ⚡ **AI-generated questions** — uses the Gemini API to generate a fresh interview question on demand
-- 🖥️ **Clean, simple UI** — built with Streamlit, no frontend setup required
+---
 
-## Tech Stack
+## 🌟 Key Features
 
-- **Frontend/UI:** Streamlit
-- **AI Model:** Google Gemini (`google-generativeai`)
-- **Language:** Python
-- **Config:** `python-dotenv` for environment variables
+- 🎯 **Role-Based Dynamic Questions**: Choose from Python Developer, Machine Learning Engineer, Data Analyst, Frontend Developer, Full Stack Developer, or HR & Behavioral.
+- 📊 **3 Experience Levels**: Junior, Mid-Level, and Senior difficulty adjustments.
+- 📄 **Resume Personalization**: Upload your resume (PDF or TXT) to automatically extract skills and receive tailored questions relevant to your background.
+- 🧠 **Structured AI Evaluation**: Every answer receives an objective score (1–10), specific strengths, missed concepts/improvements, and an exemplary ideal answer.
+- 🔊 **Voice Speech Integration**: Listen to interview questions read aloud directly in your browser.
+- 📥 **Downloadable PDF Scorecards**: Export polished interview summary reports generated with ReportLab.
+- 🛡️ **Zero-Crash Offline Mode**: Includes a comprehensive offline question bank and local evaluation heuristics so the app works seamlessly even without an API key.
+- 🧪 **Automated CI/CD**: Fully tested with `pytest` and automated via GitHub Actions.
 
-## Getting Started
+---
 
-### Prerequisites
+## 🏗️ Architecture
 
-- Python 3.9+
-- A [Google Gemini API key](https://ai.google.dev/)
+```
+AI-Interview-Simulator/
+├── .github/
+│   └── workflows/
+│       └── ci.yml               # GitHub Actions CI automated testing
+├── app.py                       # Main Streamlit interactive application
+├── config.py                    # Environment settings and API key validator
+├── requirements.txt             # Clean, pinned dependencies
+├── .env.example                 # Template for API credentials
+├── .gitignore                   # Ignored files (venv, env, cache, pdfs)
+├── README.md                    # Project documentation
+├── interview/
+│   ├── __init__.py
+│   ├── interviewer.py           # Gemini API question generator & grading engine
+│   ├── questions_bank.py        # Curated technical & behavioral question bank
+│   ├── resume_parser.py         # PDF & text parser for skill extraction
+│   └── report_generator.py      # Downloadable PDF report builder (ReportLab)
+└── tests/
+    ├── __init__.py
+    └── test_simulator.py        # Automated test suite
+```
 
-### Installation
+---
 
-1. Clone the repo
-   ```bash
-   git clone https://github.com/aizazahmad736/AI-Interview-Simulator.git
-   cd AI-Interview-Simulator
-   ```
+## 🚀 Getting Started
 
-2. Create a virtual environment (recommended)
-   ```bash
-   python -m venv venv
-   source venv/bin/activate   # Windows: venv\Scripts\activate
-   ```
+### 1. Prerequisites
+- Python 3.10+
+- (Optional) A free [Google Gemini API Key](https://aistudio.google.com/)
 
-3. Install dependencies
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2. Installation
 
-4. Set up your environment variables
+```bash
+# Clone repository
+git clone https://github.com/aizazahmad736/AI-Interview-Simulator.git
+cd AI-Interview-Simulator
 
-   Create a `.env` file in the project root:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate    # On Windows: venv\Scripts\activate
 
-### Running the app
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### 3. Configure Environment
+
+Copy `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
+Add your Gemini API key (or enter it directly inside the app UI):
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
+
+### 4. Run the Application
 
 ```bash
 streamlit run app.py
 ```
+Open your browser at `http://localhost:8501`.
 
-<img width="830" height="436" alt="Screenshot 2026-07-10 152308" src="https://github.com/user-attachments/assets/242f3074-1b29-4a60-8bcb-b8ec1f6bc00a" />
+---
 
-<img width="958" height="481" alt="Screenshot 2026-07-10 150129" src="https://github.com/user-attachments/assets/211918fa-a870-4510-aa48-bee13ba42714" />
+## 🧪 Running Unit Tests
 
-Then open the local URL Streamlit prints (usually `http://localhost:8501`) in your browser.
-
-## Usage
-
-1. Enter your name
-2. Select the interview role you want to practice for
-3. Select a difficulty level
-4. Click **Start Interview** to generate your question
-
-## Project Structure
-
-```
-AI-Interview-Simulator/
-├── app.py              # Streamlit app entry point
-├── config.py           # Loads GEMINI_API_KEY from .env
-├── requirements.txt    # Python dependencies
-└── interview/
-    └── interviewer.py  # Question generation logic (Gemini API calls)
+Run the test suite with `pytest`:
+```bash
+pytest tests/ -v
 ```
 
-> **Note:** `interview/interviewer.py` contains the `generate_question()` function that `app.py` depends on — make sure this module exists in your local copy before running the app.
+---
 
-## Roadmap
+## 🗺️ Roadmap Status
 
-Some dependencies (`PyPDF2`, `reportlab`) are already included for planned features:
+- [x] Resume upload & parsing to personalize questions
+- [x] Multi-question interactive sessions with progress tracking
+- [x] AI-scored feedback with strengths, weaknesses, and ideal answers
+- [x] Downloadable PDF interview report
+- [x] Offline fallback support for zero-crash demonstrations
+- [x] Automated CI testing workflow via GitHub Actions
 
-- [ ] Resume upload & parsing to personalize questions
-- [ ] Multi-question interview sessions (not just one question)
-- [ ] AI-scored feedback on answers
-- [ ] Downloadable PDF interview report
+---
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome. Feel free to open a PR or issue on the [GitHub repo](https://github.com/aizazahmad736/AI-Interview-Simulator).
-
-## License
-
-Add your preferred license here (e.g., MIT).
-
-## Future Improvements
-
-- Add more AI-generated interview questions.
-- Add user authentication.
-- Add interview performance analytics
-- Add support for multiple programming languages
-- Improve speech recognition accuracy
-
-## 💡 Interview Preparation Tips
-
-### Before the Interview
-- Research the company and understand the job role requirements.
-- Review important concepts related to the position you are applying for.
-- Prepare examples of your previous projects and experiences.
-- Practice explaining your projects clearly and confidently.
-
-### During the Interview
-- Read each question carefully before answering.
-- Explain your thought process while solving technical problems.
-- Be honest if you don't know an answer and explain how you would approach learning it.
-- Communicate clearly and maintain confidence.
-
-### After the Interview
-- Review your performance and identify areas for improvement.
-- Work on weak topics and practice more questions.
-- Use feedback from the AI Interview Simulator to improve future interviews.
-
-### How AI Interview Simulator Helps
-- Generates role-specific interview questions.
-- Evaluates your answers using AI.
-- Provides feedback on strengths and weaknesses.
-- Helps you practice technical and behavioral interviews.
-- Tracks your improvement over time.
+## 📄 License
+This project is licensed under the MIT License.
